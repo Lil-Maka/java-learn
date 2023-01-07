@@ -1,23 +1,20 @@
 public class TesterChallenge {
     public static void main(String[] args) {
-        printEqual(1, 1, 1);
-
-        printEqual(1, 1, 2);
-
-        printEqual(-1, -1, -1);
-
-        printEqual(1, 2, 3);
+        System.out.println(isCatPlaying(true, 10));
+        System.out.println(isCatPlaying(false, 36));
+        System.out.println(isCatPlaying(false, 35));
     }
 
-    public static void printEqual (int value1, int value2, int value3) {
-        if(value1 < 0 || value2 < 0 || value3 < 0) {
-            System.out.println("Invalid Value");
-        } else if( value1 == value2 && value2 == value3) {
-            System.out.println( "All numbers are equal");
-        } else if(value1 != value2 && value1 != value3 && value2 != value3) {
-            System.out.println( "All numbers are different");
+    public static boolean isCatPlaying (boolean summer, int temperature) {
+        boolean isPlaying;
+        if(summer && temperature >= 25 && temperature <= 45) {
+            isPlaying = true;
+        } else if (!summer && temperature >= 25 && temperature <= 35) {
+            isPlaying = true;
         } else {
-            System.out.println( "Neither all are equal or different");
+            isPlaying = false;
         }
+
+        return isPlaying;
     }
 }
