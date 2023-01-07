@@ -1,24 +1,22 @@
 public class TesterChallenge {
     public static void main(String[] args) {
-        System.out.println(area(5.0));
-        System.out.println(area(-1));
-        System.out.println(area(5.0, 4.0));
-        System.out.println(area(-1.0, 4.0));
+        printYearsAndDays(525600);
+        printYearsAndDays(1051200);
+        printYearsAndDays(561600);
     }
 
-    public static double area (double radius) {
-        double radiusValue = -1.0;
-        if(radius >= 0) {
-            radiusValue = Math.PI * Math.pow(radius, 2);
-        }
-        return radiusValue;
-    }
+    public static void printYearsAndDays (long minutes) {
+        if(minutes < 0) {
+            System.out.println("Invalid Value");
+        } else {
+            long hours = minutes / 60;
+            long days = hours / 24;
+            long remainderDays = days % 365;
+            long years = days / 365;
 
-    public static double area (double x, double y) {
-        double radiusValue = -1.0;
-        if(x >= 0 && y >= 0) {
-            radiusValue = x * y;
+            System.out.println(minutes + " min = "
+                    + years + " y and "
+                    + remainderDays + " d");
         }
-        return radiusValue;
     }
 }
