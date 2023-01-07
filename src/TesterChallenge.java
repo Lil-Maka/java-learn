@@ -1,19 +1,24 @@
 public class TesterChallenge {
     public static void main(String[] args) {
-        System.out.println(hasTeen(9, 99, 19));
-        System.out.println(hasTeen(23, 15, 42));
-        System.out.println(hasTeen(22, 23, 34));
+        System.out.println(area(5.0));
+        System.out.println(area(-1));
+        System.out.println(area(5.0, 4.0));
+        System.out.println(area(-1.0, 4.0));
     }
 
-    public static boolean hasTeen  (int firstAge, int secondAge, int thirdAge) {
-        boolean isFirstAgeTeen = isTeen(firstAge);
-        boolean isSecondAgeTeen = isTeen(secondAge);
-        boolean isThirdAgeTeen = isTeen(thirdAge);
-
-        return isFirstAgeTeen || isSecondAgeTeen || isThirdAgeTeen;
+    public static double area (double radius) {
+        double radiusValue = -1.0;
+        if(radius >= 0) {
+            radiusValue = Math.PI * Math.pow(radius, 2);
+        }
+        return radiusValue;
     }
 
-    public static  boolean isTeen (int age) {
-        return age >= 13 && age <= 19;
+    public static double area (double x, double y) {
+        double radiusValue = -1.0;
+        if(x >= 0 && y >= 0) {
+            radiusValue = x * y;
+        }
+        return radiusValue;
     }
 }
