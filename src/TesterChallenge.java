@@ -20,12 +20,14 @@ public class TesterChallenge {
             return -1;
         }
 
-        boolean isLeapMonth = isLeapYear(year);
         switch (month) {
             case 1: case 3: case 5: case 7: case 8: case 10: case 12:
                 return 31;
             default:
-                if(month == 2) return isLeapMonth ? 29 : 28;
+                if(month == 2) {
+                    boolean isLeapMonth = isLeapYear(year);
+                    return isLeapMonth ? 29 : 28;
+                }
                 else return 30;
         }
     }
