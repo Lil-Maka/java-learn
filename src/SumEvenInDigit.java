@@ -22,4 +22,3 @@ public class SumEvenInDigit {
         return totalEvenInDigitSum;
     }
 }
-}
